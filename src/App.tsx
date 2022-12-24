@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-export interface AppProps {
-  
-};
 
-const App = (props: AppProps) => {
-  const {} = props
-
+function App() {
   return (
-    <div>
-      
-    </div>
+    <Suspense>
+      <BrowserRouter>
+        <Routes>
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   );
-};
+}
 
-export default App
+export default App;
