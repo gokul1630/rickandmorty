@@ -3,5 +3,6 @@
   "printWidth": 80,
   "bracketSpacing": true,
   "useTabs": false,
-  "semi": true
+  "semi": true,
+  "trailingComma": "es5"
 }
