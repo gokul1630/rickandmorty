@@ -119,7 +119,7 @@ export function Pagination(props: PaginationProps) {
         type="button"
         onClick={onPreviousPageHandle}
         disabled={currentPageNumber === 1}
-        className="bg-blue-500 text-white w-24 rounded-lg hover:bg-blue-400"
+        className="bg-blue-500 text-white w-24 rounded-lg disabled:bg-blue-300 hover:bg-blue-400"
       >
         Previous
       </button>
@@ -162,7 +162,7 @@ export function Pagination(props: PaginationProps) {
         type="button"
         onClick={onNextPageHandle}
         disabled={currentPageNumber === lastPageNumber}
-        className="px-3 py-2 bg-blue-500 w-24 text-white rounded-lg hover:bg-blue-400"
+        className="px-3 py-2 bg-blue-500 w-24 text-white rounded-lg disabled:bg-blue-300 hover:bg-blue-400"
       >
         Next
       </button>
