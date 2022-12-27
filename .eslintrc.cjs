@@ -29,6 +29,8 @@ module.exports = {
     'react/require-default-props': 'off',
     'import/no-unresolved': 0,
     'import/extensions': 0,
+    'import/prefer-default-export': 'off',
+    'react/function-component-definition': 'off',
   },
   parserOptions: {
     ecmaVersion: 2018,

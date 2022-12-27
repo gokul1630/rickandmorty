@@ -24,7 +24,7 @@ function Home() {
       top: 0,
       behavior: 'smooth',
     });
-    
+
     setActivePage(pageNumber);
     prefetchQuery({
       queryKey: 'fetchCharacters',

@@ -19,7 +19,7 @@ function Character() {
   const episodeUrls = JSON.parse(state.episode) as unknown as Array<any>;
 
   const queriedData = useQueries([
-    ...episodeUrls?.map((url) => {
+    ...episodeUrls.map((url) => {
       return {
         queryKey: url,
         queryFn: () => fetchEpisodes(url),
@@ -62,20 +62,23 @@ function Character() {
         </h1>
 
         <ol className="mt-4">
-          {queriedData?.map(({ isLoading, data = {} }, idx) => {
-            const { name, id } = data;
-            return (
-              <>
-                {isLoading ? (
-                  <Loader />
-                ) : (
-                  <li key={id} className="text-lg lg:text-xl text-gray-800">
-                    {idx + 1}. {name}
-                  </li>
-                )}
-              </>
-            );
-          })}
+          {queriedData?.map(
+            ({ isLoading: loading, data: episodeData = {} }, idx) => {
+              const { name: episodeName, id } = episodeData;
+              return (
+                <>
+                  {loading ? (
+                    <Loader />
+                  ) : (
+                    <li key={id} className="text-lg lg:text-xl text-gray-800">
+                      {idx + 1}. {episodeName}
+                    </li>
+                  )}
+                  {false}
+                </>
+              );
+            }
+          )}
         </ol>
       </div>
     </div>
