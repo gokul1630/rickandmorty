@@ -1,20 +1,31 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Loader from './Components/Loader';
+import Spinner from './Components/Spinner';
 
-const Character = lazy(() => import('./Components/Character'));
-const Home = lazy(() => import('./Components/Home'));
+const Character = React.lazy(() => import('./Pages/Character'));
+const Home = React.lazy(() => import('./Pages/Home'));
 
 function App() {
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        suspense: true,
+      },
+    },
+  });
+
   return (
-    <Suspense fallback={<Loader />}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/character/:id" element={<Character />} />
-        </Routes>
-      </BrowserRouter>
-    </Suspense>
+    <QueryClientProvider client={client}>
+      <React.Suspense fallback={<Spinner />}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/character/:id" element={<Character />} />
+          </Routes>
+        </BrowserRouter>
+      </React.Suspense>
+    </QueryClientProvider>
   );
 }
 
