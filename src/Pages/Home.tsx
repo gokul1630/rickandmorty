@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Pagination } from './Pagination';
+import { Pagination } from '../Components/Pagination';
 
 function Home() {
   const [data, setData] = useState<any>({});

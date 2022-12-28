@@ -2,8 +2,8 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Loader from './Components/Loader';
 
-const Character = lazy(() => import('./Components/Character'));
-const Home = lazy(() => import('./Components/Home'));
+const Character = lazy(() => import('./Pages/Character'));
+const Home = lazy(() => import('./Pages/Home'));
 
 function App() {
   return (
