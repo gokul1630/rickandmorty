@@ -36,11 +36,13 @@ function Character() {
       />
       <div>
         <div>
-          {name && <h4 className="text-xl">{`Name: ${name}`}</h4>}
-          {species && <p className="text-xl mt-2">{`Species: ${species}`}</p>}
-          {origin.name && (
+          {name ? <h4 className="text-xl">{`Name: ${name}`}</h4> : null}
+          {species ? (
+            <p className="text-xl mt-2">{`Species: ${species}`}</p>
+          ) : null}
+          {origin.name ? (
             <p className="text-xl mt-2">{`Origin: ${origin.name}`}</p>
-          )}
+          ) : null}
           {!isLoading ? (
             <p className="text-xl mt-2">{`Dimension: ${dimension}`}</p>
           ) : (

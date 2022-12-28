@@ -75,18 +75,18 @@ function Home() {
                 {!isLoading ? (
                   <div className="mt-5 flex gap-2">
                     <div>
-                      {name && <p>Name: </p>}
-                      {species && <p>Species: </p>}
-                      {gender && <p>Gender: </p>}
-                      {origin.name && <p>Origin: </p>}
-                      {location.name && <p>Location: </p>}
+                      {name ? <p>Name: </p> : null}
+                      {species ? <p>Species: </p> : null}
+                      {gender ? <p>Gender: </p> : null}
+                      {origin.name ? <p>Origin: </p> : null}
+                      {location.name ? <p>Location: </p> : null}
                     </div>
                     <div>
-                      {name && <h4> {name}</h4>}
-                      {species && <p> {species}</p>}
-                      {gender && <p>{gender}</p>}
-                      {origin.name && <p>{origin.name}</p>}
-                      {location.name && <p> {location.name}</p>}
+                      {name ? <h4> {name}</h4> : null}
+                      {species ? <p> {species}</p> : null}
+                      {gender ? <p>{gender}</p> : null}
+                      {origin.name ? <p>{origin.name}</p> : null}
+                      {location.name ? <p> {location.name}</p> : null}
                     </div>
                   </div>
                 ) : (
@@ -97,14 +97,14 @@ function Home() {
           );
         })}
       </ul>
-      {results && info && (
+      {info ? (
         <Pagination
           pageCount={info.count}
           className="py-10 w-full"
           pageSize={20}
           onPageChange={onPageChange}
         />
-      )}
+      ) : null}
     </div>
   );
 }
