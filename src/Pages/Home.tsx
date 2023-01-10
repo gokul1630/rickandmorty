@@ -26,10 +26,6 @@ function Home() {
     });
 
     setActivePage(pageNumber);
-    prefetchQuery({
-      queryKey: 'fetchCharacters',
-      queryFn: () => fetchCharacters(activePage),
-    });
   };
 
   return (
